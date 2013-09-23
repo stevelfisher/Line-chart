@@ -1,0 +1,38 @@
+cd ~/dataviz-fall-2013/bar-chart/
+python -m SimpleHTTPServer
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Your beautiful D3 code will go here
+        </script>
+    </body>
+</html>     
+
+
+<style>
+  /* Our css will go here */
+</style>
+
+<h1>Strikeouts on the Rise</h1>
+<p>Meaningful intro sentence here.</p>
+<div class="chart"></div>
+
+<script>
+  // Our javascript code will go here
+</script>
+
+
+
+d3.csv("strikeouts.csv", function(data){
+  console.log(data);
+});
+
