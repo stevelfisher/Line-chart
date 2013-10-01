@@ -1,0 +1,427 @@
+install.packages("maptools")
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/maptools_0.8-27.tgz'
+Content type 'application/x-gzip' length 1685966 bytes (1.6 Mb)
+opened URL
+==================================================
+downloaded 1.6 Mb
+
+
+The downloaded binary packages are in
+	/var/folders/gt/5psnmstx5ys8hg5cjbrswfv00000gn/T//RtmpYglL23/downloaded_packages
+> library(maptools)
+Loading required package: sp
+Checking rgeos availability: FALSE
+ 	Note: when rgeos is not available, polygon geometry 	computations in maptools depend on gpclib,
+ 	which has a restricted licence. It is disabled by default;
+ 	to enable gpclib, type gpclibPermit()
+> shapes <- readShapePoly("shapes/ca/counties.shp")
+Error in getinfo.shape(filen) : Error opening SHP file
+> shapes <- readShapePoly("shapes/ca/counties.shp")
+Error in getinfo.shape(filen) : Error opening SHP file
+> shapes <- readShapePoly("shapes/ca/counties.shp")
+Error in getinfo.shape(filen) : Error opening SHP file
+> data.frame(shapes)
+Error in data.frame(shapes) : object 'shapes' not found
+> dir()
+ [1] " OP Streamline Memo.docx"                                 
+ [2] "Applications"                                             
+ [3] "CS6 Master Collection"                                    
+ [4] "dataviz-fall-2013"                                        
+ [5] "Desktop"                                                  
+ [6] "Documents"                                                
+ [7] "Downloads"                                                
+ [8] "Dropbox"                                                  
+ [9] "DumpLog 12-01-08 09:33"                                   
+[10] "DumpLog 12-01-08 09:42"                                   
+[11] "DumpLog 12-01-08 09:42.1"                                 
+[12] "DumpLog 12-01-08 09:42.2"                                 
+[13] "FCP Projects Folder"                                      
+[14] "freire_2011_class_registration_questions.doc"             
+[15] "jagex_runescape_preferences.dat"                          
+[16] "Library"                                                  
+[17] "Movies"                                                   
+[18] "Music"                                                    
+[19] "Peru Video Project.mm"                                    
+[20] "Pictures"                                                 
+[21] "Public"                                                   
+[22] "Sites"                                                    
+[23] "Steve's business card 3 copy.pdf"                         
+[24] "Steve's business card 3.pdf"                              
+[25] "Thought control brings pain into line   Nature News_files"
+[26] "Thought control brings pain into line   Nature News.html" 
+> 
+> setwd("~/dataviz-fall-2013/map-intro")
+Error in setwd("~/dataviz-fall-2013/map-intro") : 
+  cannot change working directory
+> setwd("~/dataviz-fall-2013/maps-intro")
+> shapes <- readShapePoly("shapes/ca/counties.shp")
+> plot(shapes)
+> plot(shapes, col=rainbow(100))
+> axis(1)
+> data.frame(shapes)
+         AREA  PERIMETER COUNTYP010 STATE                 COUNTY  FIPS
+0  1.77530515  7.1642054        750    CA        Siskiyou County 06093
+1  0.28402968  3.0286819        763    CA       Del Norte County 06015
+2  1.17502515  4.5393322        767    CA           Modoc County 06049
+3  0.98917598  5.9736123        863    CA        Humboldt County 06023
+4  0.88423997  6.0648607        886    CA         Trinity County 06105
+5  1.30164242  5.9735602        913    CA          Lassen County 06035
+6  1.06266362  5.5475685        914    CA          Shasta County 06089
+7  0.81034297  4.9747427       1091    CA          Tehama County 06103
+8  0.71381273  5.2001192       1092    CA          Plumas County 06063
+9  0.45644785  4.1346054       1155    CA           Butte County 06007
+10 0.95222951  5.5041586       1182    CA       Mendocino County 06045
+11 0.35942431  3.2688815       1230    CA           Glenn County 06021
+12 0.25930987  2.9485006       1237    CA          Sierra County 06091
+13 0.17447612  2.7774583       1272    CA            Yuba County 06115
+14 0.35916993  3.5921766       1284    CA            Lake County 06033
+15 0.26464660  3.4472820       1310    CA          Nevada County 06057
+16 0.31286052  3.1071708       1326    CA          Colusa County 06011
+17 0.40400615  4.2404053       1350    CA          Placer County 06061
+18 0.16409151  2.7226304       1355    CA          Sutter County 06101
+19 0.48020689  3.6796268       1415    CA       El Dorado County 06017
+20 0.19820750  2.1148759       1446    CA          Alpine County 06003
+21 0.27459938  3.3014944       1449    CA            Yolo County 06113
+22 0.21010479  2.8566215       1463    CA            Napa County 06055
+23 0.42537754  3.7145095       1466    CA          Sonoma County 06097
+24 0.26348841  3.3613843       1493    CA      Sacramento County 06067
+25 0.83019131  5.5583156       1498    CA            Mono County 06051
+26 0.16046295  2.8282503       1501    CA          Amador County 06005
+27 0.22476569  3.6340462       1540    CA          Solano County 06095
+28 0.27608519  2.8902545       1553    CA       Calaveras County 06009
+29 0.60523793  4.8853441       1570    CA        Tuolumne County 06109
+30 0.13998588  3.4170035       1591    CA           Marin County 06041
+31 0.37898717  3.3395276       1593    CA     San Joaquin County 06077
+32 0.19470327  3.0420085       1650    CA    Contra Costa County 06013
+33 0.39948150  3.6396951       1656    CA      Stanislaus County 06099
+34 0.19686576  3.1951783       1699    CA         Alameda County 06001
+35 0.38670302  3.3368131       1703    CA        Mariposa County 06043
+36 0.01272641  0.8166778       1714    CA   San Francisco County 06075
+37 0.56578262  4.7803809       1726    CA          Madera County 06039
+38 0.11950292  2.3564298       1748    CA       San Mateo County 06081
+39 0.51855889  3.4360897       1761    CA          Merced County 06047
+40 1.57111213  8.7037902       1779    CA          Fresno County 06019
+41 0.34163333  3.3734115       1798    CA     Santa Clara County 06085
+42 2.66383545  8.7337475       1809    CA            Inyo County 06027
+43 0.11761913  2.1759099       1858    CA      Santa Cruz County 06087
+44 0.36350954  3.4952907       1927    CA      San Benito County 06069
+45 0.86008315  6.0441747       1944    CA        Monterey County 06053
+46 1.25893424  5.2986600       1966    CA          Tulare County 06107
+47 0.35947397  2.8595559       2036    CA           Kings County 06031
+48 5.13037571 10.4096546       2160    CA  San Bernardino County 06071
+49 0.85050602  5.9646641       2161    CA San Luis Obispo County 06079
+50 2.09459432  7.2200159       2162    CA            Kern County 06029
+51 0.70084996  6.2740939       2283    CA   Santa Barbara County 06083
+52 0.47163137  3.7598259       2324    CA         Ventura County 06111
+53 1.03496598  7.6075616       2334    CA     Los Angeles County 06037
+54 1.84350617  7.9365313       2461    CA       Riverside County 06065
+55 0.20078928  2.6234849       2489    CA          Orange County 06059
+56 1.06083808  5.9299186       2551    CA       San Diego County 06073
+57 1.12391091  5.0328825       2566    CA        Imperial County 06025
+   STATE_FIPS SQUARE_MIL
+0          06   6347.387
+1          06   1013.179
+2          06   4201.326
+3          06   3584.422
+4          06   3206.456
+5          06   4718.470
+6          06   3847.073
+7          06   2961.163
+8          06   2612.985
+9          06   1678.974
+10         06   3513.883
+11         06   1323.305
+12         06    955.009
+13         06    645.409
+14         06   1331.757
+15         06    978.517
+16         06   1158.861
+17         06   1498.782
+18         06    608.991
+19         06   1788.512
+20         06    740.072
+21         06   1024.031
+22         06    785.442
+23         06   1589.751
+24         06    985.735
+25         06   3127.608
+26         06    600.367
+27         06    842.859
+28         06   1036.348
+29         06   2277.323
+30         06    526.414
+31         06   1427.799
+32         06    733.711
+33         06   1512.528
+34         06    744.536
+35         06   1463.714
+36         06     48.060
+37         06   2151.796
+38         06    453.282
+39         06   1972.821
+40         06   6010.780
+41         06   1299.080
+42         06  10223.468
+43         06    448.274
+44         06   1393.479
+45         06   3313.216
+46         06   4849.511
+47         06   1387.258
+48         06  20097.792
+49         06   3310.169
+50         06   8156.498
+51         06   2751.192
+52         06   1856.170
+53         06   4079.506
+54         06   7316.183
+55         06    797.156
+56         06   4243.426
+57         06   4495.635
+> data$FIPS <- sprintf("%05d",data$fips)
+Error in data$fips : object of type 'closure' is not subsettable
+> map_data <- data.frame(shapes)
+> data$FIPS <- sprintf("%05d",data$fips)
+Error in data$fips : object of type 'closure' is not subsettable
+> data
+function (..., list = character(), package = NULL, lib.loc = NULL, 
+    verbose = getOption("verbose"), envir = .GlobalEnv) 
+{
+    fileExt <- function(x) {
+        db <- grepl("\\.[^.]+\\.(gz|bz2|xz)$", x)
+        ans <- sub(".*\\.", "", x)
+        ans[db] <- sub(".*\\.([^.]+\\.)(gz|bz2|xz)$", "\\1\\2", 
+            x[db])
+        ans
+    }
+    names <- c(as.character(substitute(list(...))[-1L]), list)
+    if (!is.null(package)) {
+        if (!is.character(package)) 
+            stop("'package' must be a character string or NULL")
+        if (any(package %in% "base")) 
+            warning("datasets have been moved from package 'base' to package 'datasets'")
+        if (any(package %in% "stats")) 
+            warning("datasets have been moved from package 'stats' to package 'datasets'")
+        package[package %in% c("base", "stats")] <- "datasets"
+    }
+    paths <- find.package(package, lib.loc, verbose = verbose)
+    if (is.null(lib.loc)) 
+        paths <- c(path.package(package, TRUE), if (!length(package)) getwd(), 
+            paths)
+    paths <- unique(paths[file.exists(paths)])
+    paths <- paths[file_test("-d", file.path(paths, "data"))]
+    dataExts <- tools:::.make_file_exts("data")
+    if (length(names) == 0L) {
+        db <- matrix(character(), nrow = 0L, ncol = 4L)
+        for (path in paths) {
+            entries <- NULL
+            packageName <- if (file_test("-f", file.path(path, 
+                "DESCRIPTION"))) 
+                basename(path)
+            else "."
+            if (file_test("-f", INDEX <- file.path(path, "Meta", 
+                "data.rds"))) {
+                entries <- readRDS(INDEX)
+            }
+            else {
+                dataDir <- file.path(path, "data")
+                entries <- tools::list_files_with_type(dataDir, 
+                  "data")
+                if (length(entries)) {
+                  entries <- unique(tools::file_path_sans_ext(basename(entries)))
+                  entries <- cbind(entries, "")
+                }
+            }
+            if (NROW(entries)) {
+                if (is.matrix(entries) && ncol(entries) == 2L) 
+                  db <- rbind(db, cbind(packageName, dirname(path), 
+                    entries))
+                else warning(gettextf("data index for package %s is invalid and will be ignored", 
+                  sQuote(packageName)), domain = NA, call. = FALSE)
+            }
+        }
+        colnames(db) <- c("Package", "LibPath", "Item", "Title")
+        footer <- if (missing(package)) 
+            paste0("Use ", sQuote(paste("data(package =", ".packages(all.available = TRUE))")), 
+                "\n", "to list the data sets in all *available* packages.")
+        else NULL
+        y <- list(title = "Data sets", header = NULL, results = db, 
+            footer = footer)
+        class(y) <- "packageIQR"
+        return(y)
+    }
+    paths <- file.path(paths, "data")
+    for (name in names) {
+        found <- FALSE
+        for (p in paths) {
+            if (file_test("-f", file.path(p, "Rdata.rds"))) {
+                rds <- readRDS(file.path(p, "Rdata.rds"))
+                if (name %in% names(rds)) {
+                  found <- TRUE
+                  if (verbose) 
+                    message(sprintf("name=%s:\t found in Rdata.rds", 
+                      name), domain = NA)
+                  thispkg <- sub(".*/([^/]*)/data$", "\\1", p)
+                  thispkg <- sub("_.*$", "", thispkg)
+                  thispkg <- paste0("package:", thispkg)
+                  objs <- rds[[name]]
+                  lazyLoad(file.path(p, "Rdata"), envir = envir, 
+                    filter = function(x) x %in% objs)
+                  break
+                }
+                else if (verbose) 
+                  message(sprintf("name=%s:\t NOT found in names() of Rdata.rds, i.e.,\n\t%s\n", 
+                    name, paste(names(rds), collapse = ",")), 
+                    domain = NA)
+            }
+            if (file_test("-f", file.path(p, "Rdata.zip"))) {
+                warning("zipped data found for package ", sQuote(basename(dirname(p))), 
+                  ".\nThat is defunct, so please re-install the package.", 
+                  domain = NA)
+                if (file_test("-f", fp <- file.path(p, "filelist"))) 
+                  files <- file.path(p, scan(fp, what = "", quiet = TRUE))
+                else {
+                  warning(gettextf("file 'filelist' is missing for directory %s", 
+                    sQuote(p)), domain = NA)
+                  next
+                }
+            }
+            else {
+                files <- list.files(p, full.names = TRUE)
+            }
+            files <- files[grep(name, files, fixed = TRUE)]
+            if (length(files) > 1L) {
+                o <- match(fileExt(files), dataExts, nomatch = 100L)
+                paths0 <- dirname(files)
+                paths0 <- factor(paths0, levels = unique(paths0))
+                files <- files[order(paths0, o)]
+            }
+            if (length(files)) {
+                for (file in files) {
+                  if (verbose) 
+                    message("name=", name, ":\t file= ...", .Platform$file.sep, 
+                      basename(file), "::\t", appendLF = FALSE, 
+                      domain = NA)
+                  ext <- fileExt(file)
+                  if (basename(file) != paste0(name, ".", ext)) 
+                    found <- FALSE
+                  else {
+                    found <- TRUE
+                    zfile <- file
+                    zipname <- file.path(dirname(file), "Rdata.zip")
+                    if (file.exists(zipname)) {
+                      Rdatadir <- tempfile("Rdata")
+                      dir.create(Rdatadir, showWarnings = FALSE)
+                      topic <- basename(file)
+                      rc <- .Call(C_unzip, zipname, topic, Rdatadir, 
+                        FALSE, TRUE, FALSE)
+                      if (rc == 0L) 
+                        zfile <- file.path(Rdatadir, topic)
+                    }
+                    if (zfile != file) 
+                      on.exit(unlink(zfile))
+                    switch(ext, R = , r = {
+                      library("utils")
+                      sys.source(zfile, chdir = TRUE, envir = envir)
+                    }, RData = , rdata = , rda = load(zfile, 
+                      envir = envir), TXT = , txt = , tab = , 
+                      tab.gz = , tab.bz2 = , tab.xz = , txt.gz = , 
+                      txt.bz2 = , txt.xz = assign(name, read.table(zfile, 
+                        header = TRUE, as.is = FALSE), envir = envir), 
+                      CSV = , csv = , csv.gz = , csv.bz2 = , 
+                      csv.xz = assign(name, read.table(zfile, 
+                        header = TRUE, sep = ";", as.is = FALSE), 
+                        envir = envir), found <- FALSE)
+                  }
+                  if (found) 
+                    break
+                }
+                if (verbose) 
+                  message(if (!found) 
+                    "*NOT* ", "found", domain = NA)
+            }
+            if (found) 
+                break
+        }
+        if (!found) 
+            warning(gettextf("data set %s not found", sQuote(name)), 
+                domain = NA)
+    }
+    invisible(names)
+}
+<bytecode: 0x7f9d8dba7388>
+<environment: namespace:utils>
+> data <- read.delim("merged-multirace.txt")
+> data$FIPS <- sprintf("%05d",data$fips)
+> y2010 <- subset(data, year == 2010)
+> y2010$FIPS%in%map_data$FIPS
+ [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[14] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[27] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[40] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[53] TRUE TRUE TRUE TRUE TRUE TRUE
+> match(map_data$FIPS,y2010$FIPS)
+ [1] 47  8 25 12 53 18 45 52 32  4 23 11 46 58 17 29  6 31 51  9  2 57 28
+[24] 49 34 26  3 48  5 55 21 39  7 50  1 22 38 20 41 24 10 43 14 44 35 27
+[47] 54 16 36 40 15 42 56 19 33 30 37 13
+> match_order <- match(map_data$FIPS,y2010$FIPS)
+> y2010$pcthispanic
+ [1] 0.22505166 0.07148936 0.12485889 0.14143636 0.10318575 0.55109949
+ [7] 0.24361669 0.17801468 0.12081764 0.50305766 0.37475997 0.09813331
+[13] 0.80371631 0.19395018 0.49192205 0.50898799 0.17146834 0.17529732
+[19] 0.47744960 0.53685083 0.15478450 0.09183059 0.22204893 0.54921362
+[25] 0.13855049 0.26489227 0.55414798 0.32245538 0.08544611 0.33650994
+[31] 0.12831772 0.08022192 0.45452976 0.21581519 0.56425844 0.49191238
+[37] 0.32027391 0.15122790 0.38864536 0.20758650 0.25402150 0.42861322
+[43] 0.26897098 0.32049455 0.08395073 0.08302469 0.10278396 0.24037122
+[49] 0.24888505 0.41919864 0.28764896 0.21911980 0.06956332 0.60623639
+[55] 0.10689063 0.40272046 0.30347674 0.25016977
+> y2010$pcthispanic[match_order]
+ [1] 0.10278396 0.17801468 0.13855049 0.09813331 0.06956332 0.17529732
+ [7] 0.08395073 0.21911980 0.08022192 0.14143636 0.22204893 0.37475997
+[13] 0.08302469 0.25016977 0.17146834 0.08544611 0.55109949 0.12831772
+[19] 0.28764896 0.12081764 0.07148936 0.30347674 0.32245538 0.24888505
+[25] 0.21581519 0.26489227 0.12485889 0.24037122 0.10318575 0.10689063
+[31] 0.15478450 0.38864536 0.24361669 0.41919864 0.22505166 0.09183059
+[37] 0.15122790 0.53685083 0.25402150 0.54921362 0.50305766 0.26897098
+[43] 0.19395018 0.32049455 0.56425844 0.55414798 0.60623639 0.50898799
+[49] 0.49191238 0.20758650 0.49192205 0.42861322 0.40272046 0.47744960
+[55] 0.45452976 0.33650994 0.32027391 0.80371631
+> map_data$pctHispanic2010 <- y2010$pcthispanic[match_order]
+> hist(map_data$pctHispanic2010)
+> map_breaks <- c(0, .1, .2, .3, .4, 1)
+> buckets <- cut(map_data$pctHispanic2010,breaks=map_breaks)
+> numeric_buckets <- as.numeric(buckets)
+> install.packages("RColorBrewer")
+trying URL 'http://cran.rstudio.com/bin/macosx/contrib/3.0/RColorBrewer_1.0-5.tgz'
+Content type 'application/x-gzip' length 22725 bytes (22 Kb)
+opened URL
+==================================================
+downloaded 22 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/gt/5psnmstx5ys8hg5cjbrswfv00000gn/T//RtmpYglL23/downloaded_packages
+> library(RColorBrewer)
+> colors <- brewer.pal(5,"YlOrRd")
+> 
+> # returns [1] "#FFFFB2" "#FECC5C" "#FD8D3C" "#F03B20" "#BD0026"
+> colors <- brewer.pal(5,"YlOrRd")
+> 
+> returns [1] "#FFFFB2" "#FECC5C" "#FD8D3C" "#F03B20" "#BD0026"
+Error: unexpected string constant in "returns [1] "#FFFFB2""
+> colors <- brewer.pal(5,"YlOrRd")
+> 
+> # returns [1] "#FFFFB2" "#FECC5C" "#FD8D3C" "#F03B20" "#BD0026"
+> colors[numeric_buckets]
+ [1] "#FECC5C" "#FECC5C" "#FECC5C" "#FFFFB2" "#FFFFB2" "#FECC5C"
+ [7] "#FFFFB2" "#FD8D3C" "#FFFFB2" "#FECC5C" "#FD8D3C" "#F03B20"
+[13] "#FFFFB2" "#FD8D3C" "#FECC5C" "#FFFFB2" "#BD0026" "#FECC5C"
+[19] "#FD8D3C" "#FECC5C" "#FFFFB2" "#F03B20" "#F03B20" "#FD8D3C"
+[25] "#FD8D3C" "#FD8D3C" "#FECC5C" "#FD8D3C" "#FECC5C" "#FECC5C"
+[31] "#FECC5C" "#F03B20" "#FD8D3C" "#BD0026" "#FD8D3C" "#FFFFB2"
+[37] "#FECC5C" "#BD0026" "#FD8D3C" "#BD0026" "#BD0026" "#FD8D3C"
+[43] "#FECC5C" "#F03B20" "#BD0026" "#BD0026" "#BD0026" "#BD0026"
+[49] "#BD0026" "#FD8D3C" "#BD0026" "#BD0026" "#BD0026" "#BD0026"
+[55] "#BD0026" "#F03B20" "#F03B20" "#BD0026"
+> plot(shapes, col=colors[numeric_buckets])
+> title("Pct Hispanic by County, 2010")
